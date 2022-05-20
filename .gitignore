@@ -2,6 +2,7 @@
 
 # Ignore Workspace
 workspace.code-workspace
+.vscode/settings.json
 
 #Ignore Reference Files
 Reference Files/
@@ -9,4 +10,3 @@ Reference Files/
 ## Examples ##
 # !filehere -> allows a previously denied file, use this for config files
 # folderhere/ -> denies a whole folder
-.vscode/settings.json
