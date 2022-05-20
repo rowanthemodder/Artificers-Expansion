@@ -7,7 +7,9 @@ Vanessa's Arcane Hand
 
 Greater Arcane Reach
 
-Silver Plated Arcane Stone
+Galvanised Argent
+
+Superheated Zinc
 
 Lesser Cogwheel
 
@@ -17,4 +19,6 @@ Infused Silk Belt
 
 Animus Tube
 
-Transmute Zinc To Silver
+Marrowwood (Brown)
+
+Heartwood (Purple)
