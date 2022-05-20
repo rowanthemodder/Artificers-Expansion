@@ -1,0 +1,12 @@
+######## Faber Ferrarius ########
+
+# Ignore Workspace
+workspace.code-workspace
+
+#Ignore Reference Files
+Reference Files/
+
+## Examples ##
+# !filehere -> allows a previously denied file, use this for config files
+# folderhere/ -> denies a whole folder
+.vscode/settings.json
