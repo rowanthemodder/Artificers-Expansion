@@ -9,7 +9,7 @@ Greater Arcane Reach
 
 Galvanised Argent
 
-Superheated Zinc
+Forged Zinc
 
 Lesser Cogwheel
 
