@@ -3,7 +3,7 @@ Animus Brass
 
 Arcane Hand
 
-Vanessa's Arcane Hand
+Vressa's Arcane Hand
 
 Greater Arcane Reach
 
