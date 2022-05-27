@@ -49,5 +49,5 @@ An addon mod for Mana & Artifice and Create, transforming Create into an addon f
     modId="create"
     mandatory=true
     versionRange="[v0.4f,)"
-    ordering="BEFORE"
+    ordering="AFTER"
     side="BOTH"
