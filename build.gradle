@@ -2,18 +2,24 @@ buildscript {
     repositories {
         // These repositories are only for Gradle plugins, put any other repositories in the repository block further below
         maven { url = 'https://maven.minecraftforge.net' }
+        maven { url = 'https://maven.parchmentmc.org' } // Adds parchment support
+        maven { url = "https://plugins.gradle.org/m2/"} // Required for CurseGradle
         mavenCentral()
     }
     dependencies {
         classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '5.1.+', changing: true
+        classpath 'org.parchmentmc:librarian:1.+'
+        classpath "gradle.plugin.com.matthewprenger:CurseGradle:1.4.0" //CurseForge Gradle Plugin
     }
 }
+
 apply plugin: 'net.minecraftforge.gradle'
-// Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
+apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'eclipse'
+apply plugin: 'idea'
 apply plugin: 'maven-publish'
 
-version = '1.18.1-0.0.1'
+version = '1.18.1-0.0.0.0'
 group = 'com.rowanthemodder.artificersexpansion' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'artificersexpansion'
 
@@ -22,7 +28,8 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 println('Java: ' + System.getProperty('java.version') + ' JVM: ' + System.getProperty('java.vm.version') + '(' + System.getProperty('java.vendor') + ') Arch: ' + System.getProperty('os.arch'))
 minecraft {
-    mappings channel: 'official', version: '1.18.1'
+    mappings channel: 'parchment', version: '2022.01.23-1.18.1'
+    //mappings channel: 'official', version: '1.18.1'
     runs {
         client {
             workingDirectory project.file('run')
@@ -41,6 +48,9 @@ minecraft {
 
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             property 'forge.enabledGameTestNamespaces', 'artificersexpansion'
+
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
 
             mods {
                 artificersexpansion {
@@ -63,6 +73,9 @@ minecraft {
             // You can set various levels here.
             // Please read: https://stackoverflow.com/questions/2031163/when-to-use-the-different-log-levels
             property 'forge.logging.console.level', 'debug'
+            
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
 
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             property 'forge.enabledGameTestNamespaces', 'artificersexpansion'
@@ -125,14 +138,11 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
-	maven {
-		url "https://cursemaven.com"
-		content {
-			includeGroup "curse.maven"
-		}
-	}
-    flatDir {
-        dirs 'libs'
+    maven {
+        url "https://cursemaven.com"
+        content {
+            includeGroup "curse.maven"
+        }
     }
 }
 
@@ -140,18 +150,24 @@ dependencies {
     // Specify the version of Minecraft to use. If this is any group other than 'net.minecraft', it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency, and its patches will be applied.
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
-    minecraft 'net.minecraftforge:forge:1.18.1-39.1.2'
+    minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
-    implementation fg.deobf('blank:mna:1.7.1.20')
-    implementation fg.deobf('curse.maven:create-328085:3706700')
-    implementation fg.deobf('curse.maven:flywheel-486392:3687357')
+    implementation fg.deobf("curse.maven:mana-and-artifice-${mna_projectId}:${mna_fileId}")
+    implementation fg.deobf("curse.maven:curios-${curios_projectId}:${curios_fileId}")
+    implementation fg.deobf("curse.maven:geckolib-${geckolib_projectId}:${geckolib_fileId}")
+
+    implementation fg.deobf("curse.maven:create-${create_projectId}:${create_fileId}")
+    implementation fg.deobf("curse.maven:flywheel-${flywheel_projectId}:${flywheel_fileId}")
+
+    implementation fg.deobf("curse.maven:jei-${jei_projectId}:${jei_fileId}")
+
 }
 
 // Example for how to get properties into the manifest for reading at runtime.
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "artificersexpansion",
+                "Specification-Title"     : "Artificers Expansion",
                 "Specification-Vendor"    : "rowanthemodder",
                 "Specification-Version"   : "1", // We are version 1 of ourselves
                 "Implementation-Title"    : project.name,
