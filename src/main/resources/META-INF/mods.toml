@@ -14,7 +14,7 @@ displayName="Artificer's Expansion" #mandatory
 
 logoFile="logo.png" #optional
 
-credits="The wonderful devs of Create and Mana & Artifice" #optional
+credits="Thanks to the wonderful devs of Create and Mana & Artifice" #optional
 
 authors="Rowan The Modder" #optional
 
@@ -22,14 +22,14 @@ authors="Rowan The Modder" #optional
 description='''
 An addon mod for Mana & Artifice and Create, transforming Create into an addon for Mana & Artifice.
 '''
-# A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
+
 [[dependencies.artificersexpansion]]
     modId="forge" #mandatory
     mandatory=true #mandatory
     versionRange="[39,)" #mandatory
     ordering="NONE"
     side="BOTH"
-# Here's another dependency
+
 [[dependencies.artificersexpansion]]
     modId="minecraft"
     mandatory=true
@@ -37,12 +37,14 @@ An addon mod for Mana & Artifice and Create, transforming Create into an addon f
     versionRange="[1.18.1,1.19)"
     ordering="NONE"
     side="BOTH"
+
 [[dependencies.artificersexpansion]]
     modId="mna"
     mandatory=true
     versionRange="[1.7.1.20,)"
     ordering="AFTER"
     side="BOTH"
+
 [[dependencies.mnaana]]
     modId="create"
     mandatory=true
