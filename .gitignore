@@ -1,12 +1,31 @@
-######## Faber Ferrarius ########
+######## Artificer's Expansion ########
 
-# Ignore Workspace
+# Workspace
 workspace.code-workspace
 .vscode/settings.json
 
-#Ignore Reference Files
-Reference Files/
+# Eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
 
-## Examples ##
-# !filehere -> allows a previously denied file, use this for config files
-# folderhere/ -> denies a whole folder
+# Idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
+
+# Gradle
+build
+.gradle
+
+# Other
+eclipse
+run
+
+# Reference Files
+Reference Files/
