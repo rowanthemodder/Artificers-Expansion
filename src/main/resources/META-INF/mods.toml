@@ -45,7 +45,7 @@ An addon mod for Mana & Artifice and Create, transforming Create into an addon f
     ordering="AFTER"
     side="BOTH"
 
-[[dependencies.mnaana]]
+[[dependencies.artificersexpansion]]
     modId="create"
     mandatory=true
     versionRange="[v0.4f,)"
