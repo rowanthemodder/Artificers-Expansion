@@ -4,7 +4,7 @@
       "model": "artificersexpansion:block/marrowwood_slab"
     },
     "type=double": {
-      "model": "artificersexpansion:block/marrowwood_block"
+      "model": "artificersexpansion:block/marrowwood_planks"
     },
     "type=top": {
       "model": "artificersexpansion:block/marrowwood_slab_top"
