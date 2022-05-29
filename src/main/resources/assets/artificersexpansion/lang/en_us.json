@@ -1,0 +1,21 @@
+{
+    "itemGroup.artificersexpansionitems": "Artificer's Expansion Items",
+    "itemGroup.artificersexpansionblocks": "Artificer's Expansion Blocks",
+
+    "item.artificersexpansion.galvanized_argent_sheet": "Galvanized Argent Sheet",
+    "item.artificersexpansion.superheated_zinc": "Superheated Zinc",
+
+    "block.artificersexpansion.marrowwood_planks": "Marrowwood Planks",
+    "block.artificersexpansion.marrowwood_stairs": "Marrowwood Stairs",
+    "block.artificersexpansion.marrowwood_slab": "Marrowwood Slab",
+    "block.artificersexpansion.marrowwood_fence": "Marrowwood Fence",
+    "block.artificersexpansion.marrowwood_fence_gate": "Marrowwood Fence Gate",
+    "block.artificersexpansion.marrowwood_wall": "Marrowwood Wall",
+
+    "block.artificersexpansion.heartwood_planks": "Heartwood Planks",
+    "block.artificersexpansion.heartwood_stairs": "Heartwood Stairs",
+    "block.artificersexpansion.heartwood_slab": "Heartwood Slab",
+    "block.artificersexpansion.heartwood_fence": "Heartwood Fence",
+    "block.artificersexpansion.heartwood_fence_gate": "Heartwood Fence Gate",
+    "block.artificersexpansion.heartwood_wall": "Heartwood Wall"
+}

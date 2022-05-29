@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "artificersexpansion:block/marrowwood_planks"
+    }
+}

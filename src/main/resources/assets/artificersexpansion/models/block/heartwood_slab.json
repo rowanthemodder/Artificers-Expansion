@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:block/slab",
+    "textures": {
+        "bottom": "artificersexpansion:block/heartwood_planks",
+        "top": "artificersexpansion:block/heartwood_planks",
+        "side": "artificersexpansion:block/heartwood_planks"
+    }
+}

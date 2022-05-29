@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "artificersexpansion:block/marrowwood_slab"
+    },
+    "type=double": {
+      "model": "artificersexpansion:block/marrowwood_block"
+    },
+    "type=top": {
+      "model": "artificersexpansion:block/marrowwood_slab_top"
+    }
+  }
+}
