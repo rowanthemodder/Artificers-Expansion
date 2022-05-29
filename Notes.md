@@ -89,8 +89,11 @@ Cloth Signs (All 17 Colors)
 - blackstone
 - gilded blackstone
 
+# Misc
 AddPackFindersEvent
 https://www.youtube.com/watch?v=ryhfRw19bko&list=PLKGarocXCE1Hut51TKKqZKqVZtKLZC48x&index=15
 https://www.youtube.com/watch?v=Xjbc7Hymrkk&list=PLKGarocXCE1Hut51TKKqZKqVZtKLZC48x&index=48
 https://www.youtube.com/watch?v=yBfIt-joUxQ&list=PLKGarocXCE1Hut51TKKqZKqVZtKLZC48x&index=47
 https://forge.gemwire.uk/wiki/Main_Page
+
+TODO: Make Icon in Inkscape
