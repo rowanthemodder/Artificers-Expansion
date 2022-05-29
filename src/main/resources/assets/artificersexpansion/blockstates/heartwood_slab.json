@@ -4,7 +4,7 @@
       "model": "artificersexpansion:block/heartwood_slab"
     },
     "type=double": {
-      "model": "artificersexpansion:block/heartwood_block"
+      "model": "artificersexpansion:block/heartwood_planks"
     },
     "type=top": {
       "model": "artificersexpansion:block/heartwood_slab_top"
