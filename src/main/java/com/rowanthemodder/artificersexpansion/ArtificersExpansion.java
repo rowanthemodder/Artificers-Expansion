@@ -1,34 +1,33 @@
 package com.rowanthemodder.artificersexpansion;
 
-import com.rowanthemodder.artificersexpansion.common.Registrar;
+import org.slf4j.Logger;
 
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.ItemLike;
+import com.mojang.logging.LogUtils;
+import com.rowanthemodder.artificersexpansion.setup.ClientSetup;
+import com.rowanthemodder.artificersexpansion.setup.ModSetup;
+import com.rowanthemodder.artificersexpansion.setup.Registration;
+
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-@Mod("artificersexpansion")
+
+@Mod("artificersexpansion") 
 public class ArtificersExpansion
 {
+    private static final Logger LOGGER = LogUtils.getLogger();
     public static final String MODID = "artificersexpansion";
 
-    public static CreativeModeTab ITEM_GROUP_ITEMS = new CreativeModeTab(ArtificersExpansion.MODID + "items") {
-        @Override
-        public ItemStack makeIcon() {
-            return new ItemStack((ItemLike) Registrar.GALVANIZED_ARGENT_SHEET.get());
-        }
-    };
-
-    public static CreativeModeTab ITEM_GROUP_BLOCKS = new CreativeModeTab(ArtificersExpansion.MODID + "blocks") {
-        @Override
-        public ItemStack makeIcon() {
-            return new ItemStack((ItemLike) Registrar.MARROWWOOD_PLANKS.get());
-        }
-    };
-
     public ArtificersExpansion() {
-        Registrar.BLOCKS.register(FMLJavaModLoadingContext.get().getModEventBus());
-        Registrar.ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
+
+        // Register the deferred registry
+        Registration.init();
+
+        // Register the setup method for modloading
+        IEventBus modbus = FMLJavaModLoadingContext.get().getModEventBus();
+        modbus.addListener(ModSetup::init);
+        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> modbus.addListener(ClientSetup::init));
     }
 }
