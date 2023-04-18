@@ -21,6 +21,10 @@ out
 
 # Vscode
 .vscode
+envscoderuns
+
+# Libraries
+libs
 
 # Gradle
 build
